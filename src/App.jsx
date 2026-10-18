@@ -1,4 +1,5 @@
 import './App.css'
+import TaskList from './components/tasks/TaskList'
 
 function App() {
   return (
@@ -10,17 +11,17 @@ function App() {
 
       <section className="section">
         <h2>A dalis. Užduočių sąrašas</h2>
-        <p>Čia bus galima pridėti, pažymėti ir ištrinti užduotis.</p>
+        <TaskList />
       </section>
 
       <section className="section">
         <h2>B dalis. Krepšelio sistema</h2>
-        <p>Čia bus galima pasirinkti prekes ir valdyti krepšelį.</p>
+        <p>krepselis</p>
       </section>
 
       <section className="section">
         <h2>C dalis. Skaičių spėjimo žaidimas</h2>
-        <p>Čia reikės atspėti skaičių nuo 1 iki 100.</p>
+        <p>skaiciu zaidimas</p>
       </section>
     </main>
   )

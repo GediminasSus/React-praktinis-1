@@ -36,3 +36,66 @@
 .section p {
   margin: 0;
 }
+
+.task-form {
+  margin-bottom: 20px;
+}
+
+.task-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.task-form-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.task-form-controls input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid #9ca3af;
+  border-radius: 6px;
+}
+
+.task-form-controls button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2563eb;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.task-form-controls button:hover {
+  background-color: #1d4ed8;
+}
+
+.task-form-controls input:focus-visible,
+.task-form-controls button:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.task-form .error-message {
+  margin-top: 8px;
+  color: #b91c1c;
+}
+
+.task-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task-item {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  overflow-wrap: anywhere;
+}
