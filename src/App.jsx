@@ -58,18 +58,6 @@ function App() {
 
         <h3>Krepšelis</h3>
         <Cart cart={cart} onRemove={handleRemoveFromCart} />
-
-        {cart.length === 0 ? (
-          <p>Krepšelis tuščias.</p>
-        ) : (
-          <ul className="cart-preview">
-            {cart.map((item) => (
-              <li key={item.id}>
-                {item.name} – kiekis: {item.quantity}
-              </li>
-            ))}
-          </ul>
-        )}
       </section>
 
       <section className="section">
