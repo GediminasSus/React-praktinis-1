@@ -306,7 +306,7 @@
   cursor: pointer;
 }
 
-.guess-form-controls button:hover {
+.guess-form-controls button:hover:not(:disabled) {
   background-color: #1d4ed8;
 }
 
@@ -328,4 +328,21 @@
 
 .guess-game .game-message-error {
   color: #b91c1c;
+}
+
+.guess-form-controls input:disabled {
+  background-color: #e5e7eb;
+  color: #4b5563;
+  cursor: not-allowed;
+}
+
+.guess-form-controls button:disabled {
+  background-color: #d1d5db;
+  color: #4b5563;
+  cursor: not-allowed;
+}
+
+.guess-game .game-restart {
+  margin-top: 12px;
+  color: #4b5563;
 }
