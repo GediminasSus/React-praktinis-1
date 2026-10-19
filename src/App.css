@@ -271,3 +271,61 @@
   border-top: 2px solid #d1d5db;
   font-size: 20px;
 }
+
+.guess-form {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.guess-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.guess-form-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.guess-form-controls input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid #9ca3af;
+  border-radius: 6px;
+}
+
+.guess-form-controls button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2563eb;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.guess-form-controls button:hover {
+  background-color: #1d4ed8;
+}
+
+.guess-form-controls input:focus-visible,
+.guess-form-controls button:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.guess-game .guess-attempts {
+  margin-top: 16px;
+  font-weight: bold;
+}
+
+.guess-game .game-message {
+  margin-top: 12px;
+  color: #1d4ed8;
+}
+
+.guess-game .game-message-error {
+  color: #b91c1c;
+}

@@ -3,6 +3,7 @@ import TaskList from './components/tasks/TaskList'
 import ProductList from './components/shop/ProductList'
 import './App.css'
 import Cart from './components/shop/Cart'
+import GuessGame from './components/game/GuessGame'
 
 function App() {
   const [products] = useState([
@@ -73,7 +74,7 @@ function App() {
 
       <section className="section">
         <h2>C dalis. Skaičių spėjimo žaidimas</h2>
-        <p>Čia reikės atspėti skaičių nuo 1 iki 100.</p>
+        <GuessGame />
       </section>
     </main>
   )
