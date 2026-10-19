@@ -2,6 +2,7 @@ import { useState } from 'react'
 import TaskList from './components/tasks/TaskList'
 import ProductList from './components/shop/ProductList'
 import './App.css'
+import Cart from './components/shop/Cart'
 
 function App() {
   const [products] = useState([
@@ -30,6 +31,12 @@ function App() {
     })
   }
 
+  function handleRemoveFromCart(productId) {
+    setCart((currentCart) =>
+      currentCart.filter((item) => item.id !== productId),
+    )
+  }
+  
   return (
     <main className="app">
       <header className="app-header">
@@ -49,6 +56,7 @@ function App() {
         <ProductList products={products} onAdd={handleAddToCart} />
 
         <h3>Krepšelis</h3>
+        <Cart cart={cart} onRemove={handleRemoveFromCart} />
 
         {cart.length === 0 ? (
           <p>Krepšelis tuščias.</p>
