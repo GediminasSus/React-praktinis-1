@@ -1,16 +1,115 @@
-# React + Vite
+# React praktinė užduotis
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Praktinis darbas, skirtas React komponentams, JSX, `props`, `useState`,
+įvykiams ir formoms pritaikyti.
 
-Currently, two official plugins are available:
+Viename Vite + React projekte įgyvendintos trys dalys:
+užduočių sąrašas, krepšelio sistema ir skaičių spėjimo žaidimas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Naudojamos technologijos
 
-## React Compiler
+- Vite
+- React
+- JavaScript
+- CSS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Naudojami funkciniai komponentai ir `useState`.
+Duomenys bei veiksmų funkcijos perduodami per `props`.
+Papildomos vykdymo bibliotekos ir `useEffect` nenaudojami.
 
-## Expanding the ESLint configuration
+## Projekto paleidimas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Reikalingi Node.js ir npm.
+
+Atsisiuntus projektą, jo aplanke įdiegti priklausomybes:
+
+```bash
+npm install
+```
+
+Paleisti kūrimo serverį:
+
+```bash
+npm run dev
+```
+
+Naršyklėje atidaryti terminale parodytą vietinį adresą.
+
+## A dalis. Užduočių sąrašas
+
+Komponentai: `TaskList`, `TaskForm`, `TaskItem`.
+
+- Pradinis užduočių sąrašas yra tuščias.
+- Užduotį galima pridėti mygtuku arba paspaudus Enter.
+- Prieš pridėjimą pašalinami teksto kraštų tarpai.
+- Tuščias tekstas atmetamas ir parodomas klaidos pranešimas.
+- Pridėjus užduotį įvesties laukas išvalomas.
+- Pasirinktą užduotį galima pažymėti kaip atliktą.
+- Atlikta užduotis vizualiai išskiriama ir rodoma „Atlikta“.
+- Atliktos užduoties pažymėjimo mygtukas išjungiamas.
+- Galima ištrinti pasirinktą užduotį.
+- Tuščiame sąraše rodoma „Užduočių dar nėra.“
+
+Užduočių masyvą ir jo keitimo funkcijas saugo `TaskList`.
+Kiekviena užduotis turi `id`, `text` ir `completed` laukus.
+
+## B dalis. Krepšelio sistema
+
+Komponentai: `App`, `ProductList`, `ProductItem`, `Cart`.
+
+- Rodomos trys prekės su unikaliais ID ir teigiamomis kainomis.
+- Pradinis krepšelis yra tuščias.
+- Pirmą kartą pridėtos prekės kiekis yra 1.
+- Pakartotinis pridėjimas didina kiekį vienoje eilutėje.
+- Krepšelyje rodoma prekės vieneto kaina, kiekis ir eilutės suma.
+- Bendra kaina apskaičiuojama iš krepšelio duomenų.
+- Kainos rodomos su dviem skaitmenimis po kablelio.
+- Pašalinama visa pasirinktos prekės eilutė.
+- Tuščiame krepšelyje rodoma „Krepšelis tuščias.“ ir 0,00 Eur.
+
+Prekių sąrašą ir krepšelį saugo `App`.
+Prekės bei pridėjimo funkcija perduodami grandine:
+`App → ProductList → ProductItem`.
+
+## C dalis. Skaičių spėjimo žaidimas
+
+Komponentai: `GuessGame`, `GuessForm`, `Message`.
+
+- Slaptas sveikasis skaičius nuo 1 iki 100 generuojamas per
+  `useState` pradinės reikšmės funkciją.
+- Slaptas skaičius tarp bandymų nekinta ir sąsajoje nerodomas.
+- Spėti galima mygtuku arba paspaudus Enter.
+- Pradinis bandymų skaičius yra 0.
+- Netinkama įvestis parodo klaidą ir nedidina bandymų skaičiaus.
+- Kiekvienas tinkamas spėjimas, įskaitant teisingą, įskaičiuojamas.
+- Rodomos užuominos „Bandyk mažesnį“ arba „Bandyk didesnį“.
+- Atspėjus rodoma „Teisingai!“ ir išjungiami spėjimo valdikliai.
+- Naujas žaidimas pradedamas perkraunant puslapį.
+
+Žaidimo būseną ir spėjimų apdorojimą saugo `GuessGame`.
+
+## Duomenų saugojimas
+
+Duomenys saugomi React komponentų būsenoje.
+Perkrovus puslapį užduočių sąrašas ir krepšelis išvalomi,
+o skaičių spėjimo žaidimas pradedamas iš naujo.
+
+## Projekto patikros
+
+Kodo patikra:
+
+```bash
+npm run lint
+```
+
+Projekto surinkimas:
+
+```bash
+npm run build
+```
+
+Surinktos programos vietinė peržiūra:
+
+```bash
+npm run preview
+```
